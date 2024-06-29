@@ -117,4 +117,26 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="txtSeptima.Text" xml:space="preserve">
+    <value>El presente contrato podrá ser terminado por cualquiera de las partes, en cualquier
+momento, mediante notificación escrita con una anticipación mínima de 30 días de
+vencer el contrato. En caso de terminación anticipada por parte del ARRENDATARIO,
+este perderá el depósito de garantía a favor del ARRENDADOR.
+</value>
+  </data>
+  <data name="label2.Text" xml:space="preserve">
+    <value>Para la interpretación y cumplimiento del presente contrato, las partes se someten
+a la jurisdicción de los tribunales de Lima, renunciando expresamente a cualquier
+otro fuero que pudiera corresponderles. El presente contrato se rige por la
+legislación vigente en Perú.
+</value>
+  </data>
+  <data name="label4.Text" xml:space="preserve">
+    <value>Para todos los efectos del presente contrato, las partes fijan como sus domicilios los
+indicados en el encabezamiento del mismo, donde se considerarán válidas todas las
+notificaciones que se realicen.
+En prueba de conformidad, las partes firman el presente contrato por duplicado y a
+un solo efecto, en Lima, a los [día] días del mes de [mes] del año [año].
+</value>
+  </data>
 </root>

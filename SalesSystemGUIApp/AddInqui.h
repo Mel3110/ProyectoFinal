@@ -246,10 +246,11 @@ namespace SalesSystemGUIApp {
 			this->txtDepAsig->Name = L"txtDepAsig";
 			this->txtDepAsig->Size = System::Drawing::Size(65, 22);
 			this->txtDepAsig->TabIndex = 44;
+			this->txtDepAsig->TextChanged += gcnew System::EventHandler(this, &AddInqui::txtDepAsig_TextChanged);
 			// 
 			// button1
 			// 
-			this->button1->Location = System::Drawing::Point(177, 346);
+			this->button1->Location = System::Drawing::Point(188, 377);
 			this->button1->Margin = System::Windows::Forms::Padding(4);
 			this->button1->Name = L"button1";
 			this->button1->Size = System::Drawing::Size(134, 28);
@@ -399,5 +400,7 @@ namespace SalesSystemGUIApp {
 			   }
 		   }
 
-	};
+	private: System::Void txtDepAsig_TextChanged(System::Object^ sender, System::EventArgs^ e) {
+	}
+};
 }

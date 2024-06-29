@@ -3,7 +3,6 @@
 #include "ADMIN_inq_infodep.h"
 #include "AddInqui.h"
 #include "MOD_Inqui.h"
-#include "GraphicsForm.h"
 
 namespace SalesSystemGUIApp {
 
@@ -40,12 +39,11 @@ namespace SalesSystemGUIApp {
 			}
 		}
 	private: System::Windows::Forms::Button^ button1;
-
+	private: System::Windows::Forms::Button^ button2;
 	private: System::Windows::Forms::Button^ button3;
 	private: System::Windows::Forms::Button^ button4;
 	private: System::Windows::Forms::Button^ button5;
 	private: System::Windows::Forms::Button^ button6;
-	private: System::Windows::Forms::Button^ bttnGráfico;
 	protected:
 
 
@@ -66,32 +64,46 @@ namespace SalesSystemGUIApp {
 		void InitializeComponent(void)
 		{
 			this->button1 = (gcnew System::Windows::Forms::Button());
+			this->button2 = (gcnew System::Windows::Forms::Button());
 			this->button3 = (gcnew System::Windows::Forms::Button());
 			this->button4 = (gcnew System::Windows::Forms::Button());
 			this->button5 = (gcnew System::Windows::Forms::Button());
 			this->button6 = (gcnew System::Windows::Forms::Button());
-			this->bttnGráfico = (gcnew System::Windows::Forms::Button());
 			this->SuspendLayout();
 			// 
 			// button1
 			// 
 			this->button1->Font = (gcnew System::Drawing::Font(L"Mongolian Baiti", 14.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->button1->Location = System::Drawing::Point(92, 48);
+			this->button1->Location = System::Drawing::Point(123, 59);
+			this->button1->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
 			this->button1->Name = L"button1";
-			this->button1->Size = System::Drawing::Size(213, 55);
+			this->button1->Size = System::Drawing::Size(284, 68);
 			this->button1->TabIndex = 0;
 			this->button1->Text = L"Registrar recibos";
 			this->button1->UseVisualStyleBackColor = true;
 			this->button1->Click += gcnew System::EventHandler(this, &ADMIN_inquilino::button1_Click);
 			// 
+			// button2
+			// 
+			this->button2->Font = (gcnew System::Drawing::Font(L"Mongolian Baiti", 14.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->button2->Location = System::Drawing::Point(123, 174);
+			this->button2->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
+			this->button2->Name = L"button2";
+			this->button2->Size = System::Drawing::Size(284, 68);
+			this->button2->TabIndex = 1;
+			this->button2->Text = L"Mensajes";
+			this->button2->UseVisualStyleBackColor = true;
+			// 
 			// button3
 			// 
 			this->button3->Font = (gcnew System::Drawing::Font(L"Mongolian Baiti", 14.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->button3->Location = System::Drawing::Point(92, 134);
+			this->button3->Location = System::Drawing::Point(123, 297);
+			this->button3->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
 			this->button3->Name = L"button3";
-			this->button3->Size = System::Drawing::Size(213, 55);
+			this->button3->Size = System::Drawing::Size(284, 68);
 			this->button3->TabIndex = 2;
 			this->button3->Text = L"Agregar inquilino";
 			this->button3->UseVisualStyleBackColor = true;
@@ -101,9 +113,10 @@ namespace SalesSystemGUIApp {
 			// 
 			this->button4->Font = (gcnew System::Drawing::Font(L"Mongolian Baiti", 14.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->button4->Location = System::Drawing::Point(92, 229);
+			this->button4->Location = System::Drawing::Point(123, 414);
+			this->button4->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
 			this->button4->Name = L"button4";
-			this->button4->Size = System::Drawing::Size(213, 55);
+			this->button4->Size = System::Drawing::Size(284, 68);
 			this->button4->TabIndex = 3;
 			this->button4->Text = L"Modificar inquilino";
 			this->button4->UseVisualStyleBackColor = true;
@@ -113,9 +126,10 @@ namespace SalesSystemGUIApp {
 			// 
 			this->button5->Font = (gcnew System::Drawing::Font(L"Mongolian Baiti", 14.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->button5->Location = System::Drawing::Point(92, 331);
+			this->button5->Location = System::Drawing::Point(123, 539);
+			this->button5->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
 			this->button5->Name = L"button5";
-			this->button5->Size = System::Drawing::Size(213, 55);
+			this->button5->Size = System::Drawing::Size(284, 68);
 			this->button5->TabIndex = 4;
 			this->button5->Text = L"Información de departamento";
 			this->button5->UseVisualStyleBackColor = true;
@@ -125,37 +139,27 @@ namespace SalesSystemGUIApp {
 			// 
 			this->button6->BackColor = System::Drawing::SystemColors::ButtonHighlight;
 			this->button6->Location = System::Drawing::Point(-1, 0);
+			this->button6->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
 			this->button6->Name = L"button6";
-			this->button6->Size = System::Drawing::Size(75, 23);
+			this->button6->Size = System::Drawing::Size(100, 28);
 			this->button6->TabIndex = 29;
 			this->button6->Text = L"Atrás";
 			this->button6->UseVisualStyleBackColor = false;
 			this->button6->Click += gcnew System::EventHandler(this, &ADMIN_inquilino::button6_Click);
 			// 
-			// bttnGráfico
-			// 
-			this->bttnGráfico->Font = (gcnew System::Drawing::Font(L"Mongolian Baiti", 14.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
-				static_cast<System::Byte>(0)));
-			this->bttnGráfico->Location = System::Drawing::Point(92, 428);
-			this->bttnGráfico->Name = L"bttnGráfico";
-			this->bttnGráfico->Size = System::Drawing::Size(213, 55);
-			this->bttnGráfico->TabIndex = 31;
-			this->bttnGráfico->Text = L"Registro de cochera";
-			this->bttnGráfico->UseVisualStyleBackColor = true;
-			this->bttnGráfico->Click += gcnew System::EventHandler(this, &ADMIN_inquilino::bttnGráfico_Click);
-			// 
 			// ADMIN_inquilino
 			// 
-			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
+			this->AutoScaleDimensions = System::Drawing::SizeF(8, 16);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 			this->BackColor = System::Drawing::SystemColors::Info;
-			this->ClientSize = System::Drawing::Size(407, 525);
-			this->Controls->Add(this->bttnGráfico);
+			this->ClientSize = System::Drawing::Size(543, 683);
 			this->Controls->Add(this->button6);
 			this->Controls->Add(this->button5);
 			this->Controls->Add(this->button4);
 			this->Controls->Add(this->button3);
+			this->Controls->Add(this->button2);
 			this->Controls->Add(this->button1);
+			this->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
 			this->Name = L"ADMIN_inquilino";
 			this->Text = L"Administrador - inquilinos";
 			this->ResumeLayout(false);
@@ -213,13 +217,5 @@ namespace SalesSystemGUIApp {
 		this->Hide();
 	}
 
-	private: System::Void bttnGráfico_Click(System::Object^ sender, System::EventArgs^ e) {
-
-		GraphicsForm^ graphicsform = gcnew GraphicsForm();
-		graphicsform->FormClosed += gcnew FormClosedEventHandler(this, &ADMIN_inquilino::ADMIN_inq_infodepClosed);
-		graphicsform->Show();
-		this->Hide();
-
-	}
 };
 }

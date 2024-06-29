@@ -2,7 +2,6 @@
 #include "ADMIN_inquilino.h"
 #include "ApartmentForm.h"
 #include "PersonalForm.h"
-#include "LoginForm.h"
 #include "CrudPersonal.h"
 
 namespace SalesSystemGUIApp {
@@ -43,9 +42,8 @@ namespace SalesSystemGUIApp {
 	protected:
 	private: System::Windows::Forms::Label^ label2;
 	private: System::Windows::Forms::Button^ button1;
-
+	private: System::Windows::Forms::Button^ button2;
 	private: System::Windows::Forms::Button^ button3;
-	private: System::Windows::Forms::Button^ bttnLogout;
 
 	private:
 		/// <summary>
@@ -63,8 +61,8 @@ namespace SalesSystemGUIApp {
 			this->label1 = (gcnew System::Windows::Forms::Label());
 			this->label2 = (gcnew System::Windows::Forms::Label());
 			this->button1 = (gcnew System::Windows::Forms::Button());
+			this->button2 = (gcnew System::Windows::Forms::Button());
 			this->button3 = (gcnew System::Windows::Forms::Button());
-			this->bttnLogout = (gcnew System::Windows::Forms::Button());
 			this->SuspendLayout();
 			// 
 			// label1
@@ -72,9 +70,10 @@ namespace SalesSystemGUIApp {
 			this->label1->AutoSize = true;
 			this->label1->Font = (gcnew System::Drawing::Font(L"Mongolian Baiti", 14.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->label1->Location = System::Drawing::Point(30, 32);
+			this->label1->Location = System::Drawing::Point(40, 39);
+			this->label1->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
 			this->label1->Name = L"label1";
-			this->label1->Size = System::Drawing::Size(118, 20);
+			this->label1->Size = System::Drawing::Size(145, 25);
 			this->label1->TabIndex = 0;
 			this->label1->Text = L"Bienvenido ...";
 			// 
@@ -83,9 +82,10 @@ namespace SalesSystemGUIApp {
 			this->label2->AutoSize = true;
 			this->label2->Font = (gcnew System::Drawing::Font(L"Mongolian Baiti", 14.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->label2->Location = System::Drawing::Point(30, 69);
+			this->label2->Location = System::Drawing::Point(40, 85);
+			this->label2->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
 			this->label2->Name = L"label2";
-			this->label2->Size = System::Drawing::Size(193, 20);
+			this->label2->Size = System::Drawing::Size(248, 25);
 			this->label2->TabIndex = 1;
 			this->label2->Text = L"¿Qué desea administrar\?";
 			// 
@@ -93,48 +93,53 @@ namespace SalesSystemGUIApp {
 			// 
 			this->button1->Font = (gcnew System::Drawing::Font(L"Mongolian Baiti", 14.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->button1->Location = System::Drawing::Point(109, 143);
+			this->button1->Location = System::Drawing::Point(145, 176);
+			this->button1->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
 			this->button1->Name = L"button1";
-			this->button1->Size = System::Drawing::Size(179, 53);
+			this->button1->Size = System::Drawing::Size(239, 65);
 			this->button1->TabIndex = 2;
 			this->button1->Text = L"Inquilino";
 			this->button1->UseVisualStyleBackColor = true;
 			this->button1->Click += gcnew System::EventHandler(this, &ADMIN_interfaz::button1_Click);
 			// 
+			// button2
+			// 
+			this->button2->Font = (gcnew System::Drawing::Font(L"Mongolian Baiti", 14.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->button2->Location = System::Drawing::Point(145, 283);
+			this->button2->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
+			this->button2->Name = L"button2";
+			this->button2->Size = System::Drawing::Size(239, 65);
+			this->button2->TabIndex = 3;
+			this->button2->Text = L"Personal";
+			this->button2->UseVisualStyleBackColor = true;
+			this->button2->Click += gcnew System::EventHandler(this, &ADMIN_interfaz::button2_Click);
+			// 
 			// button3
 			// 
 			this->button3->Font = (gcnew System::Drawing::Font(L"Mongolian Baiti", 14.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->button3->Location = System::Drawing::Point(109, 250);
+			this->button3->Location = System::Drawing::Point(145, 385);
+			this->button3->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
 			this->button3->Name = L"button3";
-			this->button3->Size = System::Drawing::Size(179, 53);
+			this->button3->Size = System::Drawing::Size(239, 65);
 			this->button3->TabIndex = 4;
 			this->button3->Text = L"Departamento";
 			this->button3->UseVisualStyleBackColor = true;
 			this->button3->Click += gcnew System::EventHandler(this, &ADMIN_interfaz::button3_Click);
 			// 
-			// bttnLogout
-			// 
-			this->bttnLogout->BackColor = System::Drawing::SystemColors::ButtonHighlight;
-			this->bttnLogout->Location = System::Drawing::Point(312, 2);
-			this->bttnLogout->Name = L"bttnLogout";
-			this->bttnLogout->Size = System::Drawing::Size(82, 23);
-			this->bttnLogout->TabIndex = 30;
-			this->bttnLogout->Text = L"Cerrar sesión";
-			this->bttnLogout->UseVisualStyleBackColor = false;
-			this->bttnLogout->Click += gcnew System::EventHandler(this, &ADMIN_interfaz::bttnLogout_Click);
-			// 
 			// ADMIN_interfaz
 			// 
-			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
+			this->AutoScaleDimensions = System::Drawing::SizeF(8, 16);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 			this->BackColor = System::Drawing::SystemColors::Info;
-			this->ClientSize = System::Drawing::Size(395, 368);
-			this->Controls->Add(this->bttnLogout);
+			this->ClientSize = System::Drawing::Size(527, 516);
 			this->Controls->Add(this->button3);
+			this->Controls->Add(this->button2);
 			this->Controls->Add(this->button1);
 			this->Controls->Add(this->label2);
 			this->Controls->Add(this->label1);
+			this->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
 			this->Name = L"ADMIN_interfaz";
 			this->Text = L"ADMIN_interfaz";
 			this->ResumeLayout(false);
@@ -168,28 +173,13 @@ namespace SalesSystemGUIApp {
 		   {
 			   this->Show();
 		   }
-
 	private: System::Void button2_Click(System::Object^ sender, System::EventArgs^ e) {
-
 		CrudPersonal^ crudpersonal = gcnew CrudPersonal();
 		crudpersonal->FormClosed += gcnew FormClosedEventHandler(this, &ADMIN_interfaz::ApartmentFormClosed);
 		crudpersonal->Show();
 		this->Hide();
-
 	}
 
-	private: System::Void bttnLogout_Click(System::Object^ sender, System::EventArgs^ e) {
-
-		// Crear una instancia de LoginForm y pasar una referencia a esta forma (this)
-		SalesSystemGUIApp::LoginForm^ loginform = gcnew SalesSystemGUIApp::LoginForm(this);
-
-		// Mostrar el formulario de login
-		loginform->Show();
-
-		// Cerrar el formulario actual
-		this->Close();
-
-	}
 };
 }
 

@@ -1,4 +1,5 @@
 #pragma once
+#include "FORMATO_CONTRARTO_I.h"
 
 namespace SalesSystemGUIApp {
 
@@ -215,6 +216,7 @@ namespace SalesSystemGUIApp {
 			this->button2->TabIndex = 43;
 			this->button2->Text = L"Contrato";
 			this->button2->UseVisualStyleBackColor = true;
+			this->button2->Click += gcnew System::EventHandler(this, &ADMIN_inq_infodep::button2_Click);
 			// 
 			// button3
 			// 
@@ -272,6 +274,7 @@ namespace SalesSystemGUIApp {
 			this->dgvApartment->Location = System::Drawing::Point(439, 35);
 			this->dgvApartment->Name = L"dgvApartment";
 			this->dgvApartment->RowHeadersVisible = false;
+			this->dgvApartment->RowHeadersWidth = 51;
 			this->dgvApartment->Size = System::Drawing::Size(213, 505);
 			this->dgvApartment->TabIndex = 48;
 			this->dgvApartment->CellClick += gcnew System::Windows::Forms::DataGridViewCellEventHandler(this, &ADMIN_inq_infodep::dataGridView1_CellClick);
@@ -279,19 +282,23 @@ namespace SalesSystemGUIApp {
 			// Id
 			// 
 			this->Id->HeaderText = L"Id";
+			this->Id->MinimumWidth = 6;
 			this->Id->Name = L"Id";
 			this->Id->Width = 45;
 			// 
 			// Piso
 			// 
 			this->Piso->HeaderText = L"Piso";
+			this->Piso->MinimumWidth = 6;
 			this->Piso->Name = L"Piso";
 			this->Piso->Width = 65;
 			// 
 			// NumDepa
 			// 
 			this->NumDepa->HeaderText = L"N° Departamento";
+			this->NumDepa->MinimumWidth = 6;
 			this->NumDepa->Name = L"NumDepa";
+			this->NumDepa->Width = 125;
 			// 
 			// ADMIN_inq_infodep
 			// 
@@ -371,5 +378,19 @@ namespace SalesSystemGUIApp {
 	private: System::Void ADMIN_inq_infodep_Load(System::Object^ sender, System::EventArgs^ e) {
 		showApartment();
 	}
-	};
+
+
+		   // Función para mostrar nuevamente ADMIN_interfaz cuando ApartmentForm se cierra
+		   void ADMIN_inq_infodep::FormatoContratoI(System::Object^ sender, FormClosedEventArgs^ e)
+		   {
+			   this->Show();
+		   }
+
+	private: System::Void button2_Click(System::Object^ sender, System::EventArgs^ e) {
+		FORMATO_CONTRARTO_I^ fORMATO_CONTRARTO_I = gcnew FORMATO_CONTRARTO_I();
+		fORMATO_CONTRARTO_I->FormClosed += gcnew FormClosedEventHandler(this, &ADMIN_inq_infodep::FormatoContratoI);
+		fORMATO_CONTRARTO_I->Show();
+		this->Hide();
+	}
+};
 }
