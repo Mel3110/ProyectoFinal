@@ -1,3 +1,5 @@
+#include "LoginForm.h"
+
 #pragma once
 #include "USER_Recibos.h"
 
@@ -40,13 +42,21 @@ namespace SalesSystemGUIApp {
 
 
 	private: System::Windows::Forms::Button^ button1;
-	private: System::Windows::Forms::Button^ button2;
+
 	private: System::Windows::Forms::Button^ button3;
 	private: System::Windows::Forms::ToolTip^ toolTip1;
 	private: System::Windows::Forms::ToolTip^ toolTip2;
-	private: System::Windows::Forms::Label^ label3;
-	private: System::Windows::Forms::Label^ label2;
-	private: System::Windows::Forms::Label^ label1;
+
+
+
+	private: System::Windows::Forms::Button^ bttnLogout;
+	private: System::Windows::Forms::Label^ label4;
+	private: System::Windows::Forms::Button^ bttnSeguroOff;
+	private: System::Windows::Forms::Button^ bttnSeguroOn;
+	private: System::Windows::Forms::Button^ bttnCocheraOn;
+
+
+
 	private: System::ComponentModel::IContainer^ components;
 
 	private:
@@ -64,20 +74,21 @@ namespace SalesSystemGUIApp {
 		{
 			this->components = (gcnew System::ComponentModel::Container());
 			this->button1 = (gcnew System::Windows::Forms::Button());
-			this->button2 = (gcnew System::Windows::Forms::Button());
 			this->button3 = (gcnew System::Windows::Forms::Button());
 			this->toolTip1 = (gcnew System::Windows::Forms::ToolTip(this->components));
 			this->toolTip2 = (gcnew System::Windows::Forms::ToolTip(this->components));
-			this->label3 = (gcnew System::Windows::Forms::Label());
-			this->label2 = (gcnew System::Windows::Forms::Label());
-			this->label1 = (gcnew System::Windows::Forms::Label());
+			this->bttnLogout = (gcnew System::Windows::Forms::Button());
+			this->label4 = (gcnew System::Windows::Forms::Label());
+			this->bttnSeguroOff = (gcnew System::Windows::Forms::Button());
+			this->bttnSeguroOn = (gcnew System::Windows::Forms::Button());
+			this->bttnCocheraOn = (gcnew System::Windows::Forms::Button());
 			this->SuspendLayout();
 			// 
 			// button1
 			// 
 			this->button1->Font = (gcnew System::Drawing::Font(L"Mongolian Baiti", 14.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->button1->Location = System::Drawing::Point(189, 229);
+			this->button1->Location = System::Drawing::Point(85, 77);
 			this->button1->Margin = System::Windows::Forms::Padding(4);
 			this->button1->Name = L"button1";
 			this->button1->Size = System::Drawing::Size(235, 55);
@@ -86,23 +97,11 @@ namespace SalesSystemGUIApp {
 			this->button1->UseVisualStyleBackColor = true;
 			this->button1->Click += gcnew System::EventHandler(this, &USER_interfaz::button1_Click);
 			// 
-			// button2
-			// 
-			this->button2->Font = (gcnew System::Drawing::Font(L"Mongolian Baiti", 14.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
-				static_cast<System::Byte>(0)));
-			this->button2->Location = System::Drawing::Point(189, 316);
-			this->button2->Margin = System::Windows::Forms::Padding(4);
-			this->button2->Name = L"button2";
-			this->button2->Size = System::Drawing::Size(235, 55);
-			this->button2->TabIndex = 4;
-			this->button2->Text = L"Mensajes";
-			this->button2->UseVisualStyleBackColor = true;
-			// 
 			// button3
 			// 
 			this->button3->Font = (gcnew System::Drawing::Font(L"Mongolian Baiti", 14.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->button3->Location = System::Drawing::Point(189, 407);
+			this->button3->Location = System::Drawing::Point(363, 67);
 			this->button3->Margin = System::Windows::Forms::Padding(4);
 			this->button3->Name = L"button3";
 			this->button3->Size = System::Drawing::Size(235, 74);
@@ -110,54 +109,82 @@ namespace SalesSystemGUIApp {
 			this->button3->Text = L"Información del departamento";
 			this->button3->UseVisualStyleBackColor = true;
 			// 
-			// label3
+			// bttnLogout
 			// 
-			this->label3->AutoSize = true;
-			this->label3->Font = (gcnew System::Drawing::Font(L"Mongolian Baiti", 14.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+			this->bttnLogout->BackColor = System::Drawing::SystemColors::ButtonHighlight;
+			this->bttnLogout->Location = System::Drawing::Point(529, 2);
+			this->bttnLogout->Margin = System::Windows::Forms::Padding(4);
+			this->bttnLogout->Name = L"bttnLogout";
+			this->bttnLogout->Size = System::Drawing::Size(110, 28);
+			this->bttnLogout->TabIndex = 34;
+			this->bttnLogout->Text = L"Cerrar sesión";
+			this->bttnLogout->UseVisualStyleBackColor = false;
+			this->bttnLogout->Click += gcnew System::EventHandler(this, &USER_interfaz::bttnLogout_Click);
+			// 
+			// label4
+			// 
+			this->label4->AutoSize = true;
+			this->label4->Font = (gcnew System::Drawing::Font(L"Mongolian Baiti", 14.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->label3->Location = System::Drawing::Point(363, 129);
-			this->label3->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
-			this->label3->Name = L"label3";
-			this->label3->Size = System::Drawing::Size(100, 25);
-			this->label3->TabIndex = 2;
-			this->label3->Text = L"Servicios";
+			this->label4->Location = System::Drawing::Point(80, 212);
+			this->label4->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
+			this->label4->Name = L"label4";
+			this->label4->Size = System::Drawing::Size(259, 25);
+			this->label4->TabIndex = 38;
+			this->label4->Text = L"Control de departamento:";
 			// 
-			// label2
+			// bttnSeguroOff
 			// 
-			this->label2->AutoSize = true;
-			this->label2->Font = (gcnew System::Drawing::Font(L"Mongolian Baiti", 14.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+			this->bttnSeguroOff->Font = (gcnew System::Drawing::Font(L"Mongolian Baiti", 14.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->label2->Location = System::Drawing::Point(85, 129);
-			this->label2->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
-			this->label2->Name = L"label2";
-			this->label2->Size = System::Drawing::Size(69, 25);
-			this->label2->TabIndex = 1;
-			this->label2->Text = L"Renta";
+			this->bttnSeguroOff->Location = System::Drawing::Point(225, 395);
+			this->bttnSeguroOff->Margin = System::Windows::Forms::Padding(4);
+			this->bttnSeguroOff->Name = L"bttnSeguroOff";
+			this->bttnSeguroOff->Size = System::Drawing::Size(211, 69);
+			this->bttnSeguroOff->TabIndex = 37;
+			this->bttnSeguroOff->Text = L"Deshabilitar seguro";
+			this->bttnSeguroOff->UseVisualStyleBackColor = true;
+			this->bttnSeguroOff->Click += gcnew System::EventHandler(this, &USER_interfaz::bttnSeguroOff_Click);
 			// 
-			// label1
+			// bttnSeguroOn
 			// 
-			this->label1->AutoSize = true;
-			this->label1->Font = (gcnew System::Drawing::Font(L"Mongolian Baiti", 14.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+			this->bttnSeguroOn->Font = (gcnew System::Drawing::Font(L"Mongolian Baiti", 14.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->label1->Location = System::Drawing::Point(85, 68);
-			this->label1->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
-			this->label1->Name = L"label1";
-			this->label1->Size = System::Drawing::Size(185, 25);
-			this->label1->TabIndex = 0;
-			this->label1->Text = L"Deuda acumulada";
+			this->bttnSeguroOn->Location = System::Drawing::Point(363, 297);
+			this->bttnSeguroOn->Margin = System::Windows::Forms::Padding(4);
+			this->bttnSeguroOn->Name = L"bttnSeguroOn";
+			this->bttnSeguroOn->Size = System::Drawing::Size(211, 74);
+			this->bttnSeguroOn->TabIndex = 36;
+			this->bttnSeguroOn->Text = L"Habilitar seguro";
+			this->bttnSeguroOn->UseVisualStyleBackColor = true;
+			this->bttnSeguroOn->Click += gcnew System::EventHandler(this, &USER_interfaz::bttnSeguroOn_Click);
+			// 
+			// bttnCocheraOn
+			// 
+			this->bttnCocheraOn->Font = (gcnew System::Drawing::Font(L"Mongolian Baiti", 14.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->bttnCocheraOn->Location = System::Drawing::Point(85, 297);
+			this->bttnCocheraOn->Margin = System::Windows::Forms::Padding(4);
+			this->bttnCocheraOn->Name = L"bttnCocheraOn";
+			this->bttnCocheraOn->Size = System::Drawing::Size(235, 74);
+			this->bttnCocheraOn->TabIndex = 35;
+			this->bttnCocheraOn->Text = L"Habilitar cochera";
+			this->bttnCocheraOn->UseVisualStyleBackColor = true;
+			this->bttnCocheraOn->Click += gcnew System::EventHandler(this, &USER_interfaz::bttnCocheraOn_Click);
 			// 
 			// USER_interfaz
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(8, 16);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 			this->BackColor = System::Drawing::SystemColors::Info;
-			this->ClientSize = System::Drawing::Size(640, 587);
+			this->ClientSize = System::Drawing::Size(640, 534);
+			this->Controls->Add(this->label4);
+			this->Controls->Add(this->bttnSeguroOff);
+			this->Controls->Add(this->bttnSeguroOn);
+			this->Controls->Add(this->bttnCocheraOn);
+			this->Controls->Add(this->bttnLogout);
 			this->Controls->Add(this->button3);
-			this->Controls->Add(this->button2);
 			this->Controls->Add(this->button1);
-			this->Controls->Add(this->label3);
-			this->Controls->Add(this->label2);
-			this->Controls->Add(this->label1);
 			this->Margin = System::Windows::Forms::Padding(4);
 			this->Name = L"USER_interfaz";
 			this->Text = L"USER_interfaz";
@@ -168,6 +195,8 @@ namespace SalesSystemGUIApp {
 		}
 #pragma endregion
 	private: System::Void USER_interfaz_Load(System::Object^ sender, System::EventArgs^ e) {
+
+
 	}
 	private: System::Void button1_Click(System::Object^ sender, System::EventArgs^ e) {
 		USER_Recibos^ recibo = gcnew USER_Recibos();
@@ -180,5 +209,99 @@ namespace SalesSystemGUIApp {
 		   {
 			   this->Show();
 		   }
-	};
+	private: System::Void bttnLogout_Click(System::Object^ sender, System::EventArgs^ e) {
+
+		// Crear una instancia de LoginForm y pasar una referencia a esta forma (this)
+		SalesSystemGUIApp::LoginForm^ loginform = gcnew SalesSystemGUIApp::LoginForm(this);
+
+		// Mostrar el formulario de login
+		loginform->Show();
+
+		// Cerrar el formulario actual
+		this->Close();
+
+	}
+
+		   void ComunicarArduinoCochera(int encendido) {
+
+			   try {
+				   String^ result = Service::EnviarOnOff(encendido);
+
+				   String^ resultString = result->ToString();
+
+				   // resultString ES LA VARIABLE RETORNADA POR EL ARDUINO, IMPORTANTE!, VALOR VÁLIDO ES != "50\r" 
+
+				   if (resultString->Equals("50\r")) {
+					   MessageBox::Show("No se ha logrado iniciar el sistema de cochera.");
+				   }
+				   else {
+					   MessageBox::Show("Se ha activado la cochera, proceda a ingresar por favor");
+				   }
+			   }
+			   catch (Exception^ ex) {
+				   MessageBox::Show("Ha ocurrido un problema: " + ex->Message);
+			   }
+
+		   }
+
+		   void ComunicarArduinoSeguroOn(int encendido) {
+
+			   try {
+				   String^ result = Service::EnviarOnOff(encendido);
+
+				   String^ resultString = result->ToString();
+
+				   // resultString ES LA VARIABLE RETORNADA POR EL ARDUINO, IMPORTANTE!, VALOR VÁLIDO ES != "50\r" 
+
+				   if (resultString->Equals("50\r")) {
+					   MessageBox::Show("Su vivienda está asegurada.");
+				   }
+				   else {
+					   MessageBox::Show("No se ha logrado asegurar su vivienda, comprobar sensor.");
+				   }
+			   }
+			   catch (Exception^ ex) {
+				   MessageBox::Show("Ha ocurrido un problema: " + ex->Message);
+			   }
+
+		   }
+
+		   void ComunicarArduinoSeguroOff(int encendido) {
+
+			   try {
+				   String^ result = Service::EnviarOnOff(encendido);
+
+				   String^ resultString = result->ToString();
+
+				   // resultString ES LA VARIABLE RETORNADA POR EL ARDUINO, IMPORTANTE!, VALOR VÁLIDO ES != "50\r" 
+
+				   if (resultString->Equals("50\r")) {
+					   MessageBox::Show("Seguridad desactivada, puede ingresar a su vivienda.");
+				   }
+				   else {
+					   MessageBox::Show("No se ha logrado desactivar la seguridad, comprobar sensor.");
+				   }
+			   }
+			   catch (Exception^ ex) {
+				   MessageBox::Show("Ha ocurrido un problema: " + ex->Message);
+			   }
+
+		   }
+
+	private: System::Void bttnCocheraOn_Click(System::Object^ sender, System::EventArgs^ e) {
+
+		ComunicarArduinoCochera(1);
+
+	}
+	private: System::Void bttnSeguroOn_Click(System::Object^ sender, System::EventArgs^ e) {
+
+		ComunicarArduinoSeguroOn(2);
+
+	}
+	private: System::Void bttnSeguroOff_Click(System::Object^ sender, System::EventArgs^ e) {
+
+		ComunicarArduinoSeguroOff(3);
+
+	}
+};
 }

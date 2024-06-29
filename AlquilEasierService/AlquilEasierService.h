@@ -58,12 +58,17 @@ namespace AlquilEasierService {
 		static List<Inquilino^>^ ConsultaInquilino();
 		static Inquilino^ ConsultaInquilinoByNumDep(int numDep);
 
+
+
+
 		//CRUD DEL PERSONAL
 		static int AddPersonal(Personal^ personal);
 		static int ModifyPersonal(Personal^ personal);
 		static int DeletePersonal(int personalID);
 		static List<Personal^>^ ConsultaPersonal();
 		static Personal^ ConsultaPersonalByID(int personalID);
+
+
 
 	};
 }

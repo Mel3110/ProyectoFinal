@@ -54,7 +54,7 @@ namespace SalesSystemGUIApp {
 
 
 	private: System::Windows::Forms::PictureBox^ pictureBox1;
-	private: System::Windows::Forms::Button^ button1;
+
 	private: System::Windows::Forms::Button^ button2;
 	private: System::Windows::Forms::Button^ button3;
 	private: System::Windows::Forms::TextBox^ textDep;
@@ -89,7 +89,6 @@ namespace SalesSystemGUIApp {
 			this->textBox1 = (gcnew System::Windows::Forms::TextBox());
 			this->label5 = (gcnew System::Windows::Forms::Label());
 			this->pictureBox1 = (gcnew System::Windows::Forms::PictureBox());
-			this->button1 = (gcnew System::Windows::Forms::Button());
 			this->button2 = (gcnew System::Windows::Forms::Button());
 			this->button3 = (gcnew System::Windows::Forms::Button());
 			this->textDep = (gcnew System::Windows::Forms::TextBox());
@@ -206,17 +205,6 @@ namespace SalesSystemGUIApp {
 			this->pictureBox1->TabIndex = 41;
 			this->pictureBox1->TabStop = false;
 			// 
-			// button1
-			// 
-			this->button1->Font = (gcnew System::Drawing::Font(L"Mongolian Baiti", 14.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
-				static_cast<System::Byte>(0)));
-			this->button1->Location = System::Drawing::Point(249, 369);
-			this->button1->Name = L"button1";
-			this->button1->Size = System::Drawing::Size(120, 57);
-			this->button1->TabIndex = 42;
-			this->button1->Text = L"Historial de recibos";
-			this->button1->UseVisualStyleBackColor = true;
-			// 
 			// button2
 			// 
 			this->button2->Font = (gcnew System::Drawing::Font(L"Mongolian Baiti", 14.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
@@ -317,7 +305,6 @@ namespace SalesSystemGUIApp {
 			this->Controls->Add(this->label1);
 			this->Controls->Add(this->button3);
 			this->Controls->Add(this->button2);
-			this->Controls->Add(this->button1);
 			this->Controls->Add(this->pictureBox1);
 			this->Controls->Add(this->textBox6);
 			this->Controls->Add(this->textBox4);
