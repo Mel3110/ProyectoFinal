@@ -69,7 +69,7 @@ namespace SalesSystemGUIApp {
 		/// <summary>
 		/// Variable del diseñador necesaria.
 		/// </summary>
-		System::ComponentModel::Container ^components;
+		System::ComponentModel::Container^ components;
 
 #pragma region Windows Form Designer generated code
 		/// <summary>
@@ -311,53 +311,53 @@ namespace SalesSystemGUIApp {
 
 	private: System::Void CrudPersonal_Load(System::Object^ sender, System::EventArgs^ e) {
 	}
-private: System::Void btnAgregar_Click(System::Object^ sender, System::EventArgs^ e) {
-	String^ nombre = textNombre->Text;
-	String^ apellido = textApellido->Text;
-	String^ telefono = textTelefono->Text;
-	String^ correo = textCorreo->Text;
-	String^ dni = textDNI->Text;
-	int id = Convert::ToInt32(textDNI->Text);
+	private: System::Void btnAgregar_Click(System::Object^ sender, System::EventArgs^ e) {
+		String^ nombre = textNombre->Text;
+		String^ apellido = textApellido->Text;
+		String^ telefono = textTelefono->Text;
+		String^ correo = textCorreo->Text;
+		String^ dni = textDNI->Text;
+		int id = Convert::ToInt32(textDNI->Text);
 
-	Personal^ personal = gcnew Personal();
+		Personal^ personal = gcnew Personal();
 
-	personal->Nombre = nombre;
-	personal->Apellido = apellido;
-	personal->Telefono = telefono;
-	personal->Correo = correo;
-	personal->DNI = dni;
-	personal->Id = id;
+		personal->Nombre = nombre;
+		personal->Apellido = apellido;
+		personal->Telefono = telefono;
+		personal->Correo = correo;
+		personal->DNI = dni;
+		personal->Id = id;
 
-	Service::AddPersonal(personal);
-	showPersonal();
-}
-private: System::Void btnModify_Click(System::Object^ sender, System::EventArgs^ e) {
-	String^ nombre = textNombre->Text;
-	String^ apellido = textApellido->Text;
-	String^ telefono = textTelefono->Text;
-	String^ correo = textCorreo->Text;
-	String^ dni = textDNI->Text;
-	int id = Convert::ToInt32(textDNI->Text);
+		Service::AddPersonal(personal);
+		showPersonal();
+	}
+	private: System::Void btnModify_Click(System::Object^ sender, System::EventArgs^ e) {
+		String^ nombre = textNombre->Text;
+		String^ apellido = textApellido->Text;
+		String^ telefono = textTelefono->Text;
+		String^ correo = textCorreo->Text;
+		String^ dni = textDNI->Text;
+		int id = Convert::ToInt32(textDNI->Text);
 
-	Personal^ personal = gcnew Personal();
+		Personal^ personal = gcnew Personal();
 
-	personal->Nombre = nombre;
-	personal->Apellido = apellido;
-	personal->Telefono = telefono;
-	personal->Correo = correo;
-	personal->DNI = dni;
-	personal->Id = id;
+		personal->Nombre = nombre;
+		personal->Apellido = apellido;
+		personal->Telefono = telefono;
+		personal->Correo = correo;
+		personal->DNI = dni;
+		personal->Id = id;
 
-	Service::ModifyPersonal(personal);
-	showPersonal();
-}
-private: System::Void btnEliminar_Click(System::Object^ sender, System::EventArgs^ e) {
-	int personalID = Convert::ToInt32(textDNI->Text);
-	Service::DeleteInquilino(personalID);
-	showPersonal();
-}
-private: System::Void button2_Click(System::Object^ sender, System::EventArgs^ e) {
-	this->Close();
-}
-};
+		Service::ModifyPersonal(personal);
+		showPersonal();
+	}
+	private: System::Void btnEliminar_Click(System::Object^ sender, System::EventArgs^ e) {
+		int personalID = Convert::ToInt32(textDNI->Text);
+		Service::DeleteInquilino(personalID);
+		showPersonal();
+	}
+	private: System::Void button2_Click(System::Object^ sender, System::EventArgs^ e) {
+		this->Close();
+	}
+	};
 }

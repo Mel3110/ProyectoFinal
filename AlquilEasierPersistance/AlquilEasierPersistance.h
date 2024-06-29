@@ -3,6 +3,8 @@
 using namespace System;
 using namespace AlquilEasierModel;
 using namespace System::Collections::Generic;
+using namespace System::Data::SqlClient;
+
 
 namespace AlquilEasierPersistance {
 	public ref class Persistance
@@ -16,9 +18,11 @@ namespace AlquilEasierPersistance {
 		static List<Personal^>^ horariosListDB = gcnew List<Personal^>();
 		static List<Deudas^>^ deudaListDB = gcnew List<Deudas^>();
 		static List<Inquilino^>^ inquilinoListDB = gcnew List<Inquilino^>();
-		static List<Personal^>^ personalListDB = gcnew List<Personal^>();
 		//Lista de alarmas
 		static List<Alarma^>^ alarmlistDB = gcnew List<Alarma^>();
+		//Conectarse al SQL
+		static SqlConnection^ GetConnection();
+
 
 	public:
 		//Archivos BIN
@@ -29,7 +33,6 @@ namespace AlquilEasierPersistance {
 		static String^ BIN_ALARMA_FILE_NAME = "alarma.bin";
 		static String^ BIN_HORARIOS_FILE_NAME = "horarios.bin";
 		static String^ BIN_INQUILINO_FILE_NAME = "inquilino.bin";
-		static String^ BIN_PERSONAL_FILE_NAME = "personal.bin";
 
 		//Operaciones para Login
 		static int AddUsuario(Usuario^ usuario);
@@ -65,12 +68,16 @@ namespace AlquilEasierPersistance {
 		static List<Inquilino^>^ ConsultaInquilino();
 		static Inquilino^ ConsultaInquilinoByNumDep (int numDep);
 
+
+		static List<Personal^>^ personalListDB = gcnew List<Personal^>();
+		static String^ BIN_PERSONAL_FILE_NAME = "personal.bin";
 		//Operaciones de PERSONAL
 		static int AddPersonal(Personal^ personal);
 		static int ModifyPersonal(Personal^ personal);
 		static int DeletePersonal(int personalID);
 		static List<Personal^>^ ConsultaPersonal();
 		static Personal^ ConsultaPersonalByID(int personalID);
+
 
 	};
 }

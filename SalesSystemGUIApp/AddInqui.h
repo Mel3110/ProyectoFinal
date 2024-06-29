@@ -249,7 +249,7 @@ namespace SalesSystemGUIApp {
 			// 
 			// button1
 			// 
-			this->button1->Location = System::Drawing::Point(188, 377);
+			this->button1->Location = System::Drawing::Point(177, 346);
 			this->button1->Margin = System::Windows::Forms::Padding(4);
 			this->button1->Name = L"button1";
 			this->button1->Size = System::Drawing::Size(134, 28);

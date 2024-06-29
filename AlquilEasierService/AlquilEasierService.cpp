@@ -240,6 +240,7 @@ void AlquilEasierService::Service::ClosePort()
     }
 }
 
+
 int AlquilEasierService::Service::AddPersonal(Personal^ personal)
 {
     Persistance::AddPersonal(personal);
@@ -265,6 +266,7 @@ Personal^ AlquilEasierService::Service::ConsultaPersonalByID(int personalID)
 {
     return Persistance::ConsultaPersonalByID(personalID);
 }
+
 
 
 

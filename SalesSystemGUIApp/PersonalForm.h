@@ -315,7 +315,6 @@ namespace SalesSystemGUIApp {
             else
             {
                 int index = e->Index;
-
                 // Mostrar mensaje de confirmación
                 MessageBox::Show("La " + selectedItem + " ha sido marcada como limpia y registrada.", "Registro Exitoso", MessageBoxButtons::OK, MessageBoxIcon::Information);
             }
@@ -331,59 +330,62 @@ namespace SalesSystemGUIApp {
                 Departamento^ depa = departList[i];
                 if (depa->Piso == piso)
                 {
-                    habitaciones->Add("Habitación " + depa->NumDep.ToString());
+                    String^ numDepa = "Habitación " + depa->NumDep;
+                    habitaciones->Add(numDepa);
                 }
             }
 
             return habitaciones->ToArray();
         }
 
-    private: System::Void PersonalForm_Load(System::Object^ sender, System::EventArgs^ e) {
-        button1->Enabled = false;
 
-        // Configurar la primera pestaña por defecto
-        BarraOpciones->SelectedIndex = 0;
-
-        //pictureBox1->Image = Image::FromFile("C:\\ProyectoLPOO\\Logo.png");
-        //pictureBox1->Size = System::Drawing::Size(252, 149); // Tamaño deseado
-        //pictureBox1->SizeMode = PictureBoxSizeMode::StretchImage;  // Estirar la imagen para que se ajuste al tamaño del PictureBox
-        
-        
-        // LABEL PARA NOMBRE Y APELLIDO
-        Label^ labelNombreCompleto = gcnew Label();
-        labelNombreCompleto->Text = "Nuevo Label";
-        labelNombreCompleto->Location = System::Drawing::Point(85, 210);
-        labelNombreCompleto->Size = System::Drawing::Size(145, 20);
-        labelNombreCompleto->Font = gcnew System::Drawing::Font("Microsoft Sans Serif", 10, System::Drawing::FontStyle::Regular);
-        // Agregar el Label al formulario
-        this->Controls->Add(labelNombreCompleto);
-        showHorario();
-    }
-
-           void comboBoxPisos_SelectedIndexChanged(System::Object^ sender, System::EventArgs^ e) {
-               int pisoSeleccionado = comboBoxPisos->SelectedIndex + 1; // Obtener el piso seleccionado
-               UpdateCheckedListBox(GetHabitacionesPorPiso(pisoSeleccionado));
-           }
+        void comboBoxPisos_SelectedIndexChanged(System::Object^ sender, System::EventArgs^ e) {
+            int pisoSeleccionado = comboBoxPisos->SelectedIndex + 1; // Obtener el piso seleccionado
+            UpdateCheckedListBox(GetHabitacionesPorPiso(pisoSeleccionado));
+        }
 
     private: System::Void BarraOpciones_SelectedIndexChanged(System::Object^ sender, System::EventArgs^ e) {
         // Verificar si la pestaña seleccionada es la segunda pestaña (TabPage2)
+
         if (BarraOpciones->SelectedTab == tabPage2) {
             // Mostrar los controles para seleccionar el piso y las habitaciones limpias
             comboBoxPisos->Visible = true;
             label2->Visible = true;
-
             dataGridView1->Visible = true;
-            /*Fecha->Visible = false;
-            HoraIngreso->Visible = false;
-            HoraSalida->Visible = false;
-            textBox1->Visible = false;
-            textBox2->Visible = false;
-            textBox3->Visible = false;
-            */
+
+
 
             // Llenar el ComboBox de pisos
             comboBoxPisos->Items->Clear();
-            comboBoxPisos->Items->AddRange(gcnew array<System::String^>{ "Piso 1", "Piso 2", "Piso 3", "Piso 4", "Piso 5" });
+            //comboBoxPisos->Items->AddRange(gcnew array<System::String^>{ "Piso 1", "Piso 2", "Piso 3", "Piso 4", "Piso 5" });
+
+
+
+
+            List<Departamento^>^ listaDepartamentos = Service::ConsultaDepa(); // Ejemplo hipotético
+
+            // Limpiar el ComboBox antes de agregar nuevos elementos
+            comboBoxPisos->Items->Clear();
+
+            // Iterar sobre la lista de departamentos para obtener los pisos únicos
+            List<String^>^ pisosUnicos = gcnew List<String^>();
+            for each (Departamento ^ depto in listaDepartamentos) {
+                String^ piso = "Piso " + depto->Piso; // Suponiendo que Piso es un número entero
+                if (!pisosUnicos->Contains(piso)) {
+                    pisosUnicos->Add(piso);
+                }
+            }
+
+            // Agregar los pisos únicos al ComboBox
+            comboBoxPisos->Items->AddRange(pisosUnicos->ToArray());
+
+
+
+
+
+
+
+
 
             // Por defecto, seleccionar el primer piso
             comboBoxPisos->SelectedIndex = 0;
@@ -408,9 +410,28 @@ namespace SalesSystemGUIApp {
         }
     }
 
+
+
+
+
+
+
+
+
+
+    private: System::Void PersonalForm_Load(System::Object^ sender, System::EventArgs^ e) {
+        button1->Enabled = false;
+
+        // Configurar la primera pestaña por defecto
+        BarraOpciones->SelectedIndex = 0;
+
+        //pictureBox1->Image = Image::FromFile("C:\\ProyectoLPOO\\Logo.png");
+        //pictureBox1->Size = System::Drawing::Size(252, 149); // Tamaño deseado
+        //pictureBox1->SizeMode = PictureBoxSizeMode::StretchImage;  // Estirar la imagen para que se ajuste al tamaño del PictureBox
+
+        showHorario();
+    }
            Personal^ horarioActual = nullptr;
-    
-          
     private: System::Void button2_Click(System::Object^ sender, System::EventArgs^ e) {
 
         DateTime ahora = DateTime::Now;
@@ -434,72 +455,59 @@ namespace SalesSystemGUIApp {
 
         // No registrar aún en la base de datos o en la lista global
         // Service::AddHorario(horarioActual); <-- No registrar aún
-        
+
     }
-
-
-          private: int ConvertirFecha(String^ fechaStr) {
-              DateTime fecha = DateTime::Parse(fechaStr);
-              return fecha.Year * 10000 + fecha.Month * 100 + fecha.Day;
-          }
-
-
-                 void showHorario() {
-                     // Supongamos que tienes una lista global de objetos Personal llamada listaHorarios
-                     List<Personal^>^ horarioList = Service::ConsultaHorario();
-                     dataGridView1->Rows->Clear();
-                     for (int i = 0; i < horarioList->Count; i++) {
-                         String^ fechaSeparada = SepararFecha(horarioList[i]->Fecha);
-                         dataGridView1->Rows->Add(gcnew array<String^>{
-                             fechaSeparada,
-                                 horarioList[i]->HoraEntrada,
-                                 horarioList[i]->HoraSalida,
-                         });
-                     }
-                 }
-
-                 String^ SepararFecha(int fecha) {
-                     // Asumiendo que la fecha está en formato AAAAMMDD
-                     int año = fecha / 10000;
-                     int mes = (fecha % 10000) / 100;
-                     int día = fecha % 100;
-                     return año + "-" + mes.ToString("00") + "-" + día.ToString("00");
-                 }
-
-
-
-
-
-
+    private: int ConvertirFecha(String^ fechaStr) {
+        DateTime fecha = DateTime::Parse(fechaStr);
+        return fecha.Year * 10000 + fecha.Month * 100 + fecha.Day;
+    }
+           void showHorario() {
+               // Supongamos que tienes una lista global de objetos Personal llamada listaHorarios
+               List<Personal^>^ horarioList = Service::ConsultaHorario();
+               dataGridView1->Rows->Clear();
+               for (int i = 0; i < horarioList->Count; i++) {
+                   String^ fechaSeparada = SepararFecha(horarioList[i]->Fecha);
+                   dataGridView1->Rows->Add(gcnew array<String^>{
+                       fechaSeparada,
+                           horarioList[i]->HoraEntrada,
+                           horarioList[i]->HoraSalida,
+                   });
+               }
+           }
+           String^ SepararFecha(int fecha) {
+               // Asumiendo que la fecha está en formato AAAAMMDD
+               int año = fecha / 10000;
+               int mes = (fecha % 10000) / 100;
+               int día = fecha % 100;
+               return año + "-" + mes.ToString("00") + "-" + día.ToString("00");
+           }
     private: System::Void dataGridView1_CellClick(System::Object^ sender, System::Windows::Forms::DataGridViewCellEventArgs^ e) {
-
     }
-
     private: System::Void tabPage1_Click(System::Object^ sender, System::EventArgs^ e) {
     }
 
 
-private: System::Void button1_Click(System::Object^ sender, System::EventArgs^ e) {
-    if (horarioActual != nullptr) {
-        DateTime ahora = DateTime::Now;
+    private: System::Void button1_Click(System::Object^ sender, System::EventArgs^ e) {
+        if (horarioActual != nullptr) {
+            DateTime ahora = DateTime::Now;
 
-        // Mostrar la hora de salida en el cuadro de texto
-        String^ horaSalida = ahora.ToString("HH:mm:ss");
+            // Mostrar la hora de salida en el cuadro de texto
+            String^ horaSalida = ahora.ToString("HH:mm:ss");
 
-        // Asignar la hora de salida al objeto Personal existente
-        horarioActual->HoraSalida = horaSalida;
+            // Asignar la hora de salida al objeto Personal existente
+            horarioActual->HoraSalida = horaSalida;
 
-        // Deshabilitar el botón de salida y habilitar el de entrada
-        button1->Enabled = false;
-        button2->Enabled = true;
+            // Deshabilitar el botón de salida y habilitar el de entrada
+            button1->Enabled = false;
+            button2->Enabled = true;
 
-        // Registrar el horario completo en la base de datos o lista global
-        Service::AddHorario(horarioActual);
-        showHorario(); // Actualizar la vista
-        horarioActual = nullptr; // Reiniciar el objeto para el próximo registro
+            // Registrar el horario completo en la base de datos o lista global
+            Service::AddHorario(horarioActual);
+            showHorario(); // Actualizar la vista
+            horarioActual = nullptr; // Reiniciar el objeto para el próximo registro
+        }
     }
-}
-};
+    };
 }
 ;
 

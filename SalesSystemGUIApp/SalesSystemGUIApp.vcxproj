@@ -219,9 +219,6 @@
     <EmbeddedResource Include="Contrato.resx">
       <DependentUpon>Contrato.h</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="CrudPersonal.resx">
-      <DependentUpon>CrudPersonal.h</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="DepSearchForm.resx">
       <DependentUpon>DepSearchForm.h</DependentUpon>
     </EmbeddedResource>
