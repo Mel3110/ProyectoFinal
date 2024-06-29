@@ -63,10 +63,13 @@
     <ClCompile Include="MOD_Inqui.cpp">
       <Filter>Archivos de origen</Filter>
     </ClCompile>
-    <ClCompile Include="Contrato.cpp">
+    <ClCompile Include="CrudPersonal.cpp">
       <Filter>Archivos de origen</Filter>
     </ClCompile>
-    <ClCompile Include="CrudPersonal.cpp">
+    <ClCompile Include="FORMATO_CONTRARTO_I.cpp">
+      <Filter>Archivos de origen</Filter>
+    </ClCompile>
+    <ClCompile Include="FORMATO_CONTRATO_II.cpp">
       <Filter>Archivos de origen</Filter>
     </ClCompile>
   </ItemGroup>
@@ -122,10 +125,13 @@
     <ClInclude Include="MOD_Inqui.h">
       <Filter>Archivos de encabezado</Filter>
     </ClInclude>
-    <ClInclude Include="Contrato.h">
+    <ClInclude Include="CrudPersonal.h">
       <Filter>Archivos de encabezado</Filter>
     </ClInclude>
-    <ClInclude Include="CrudPersonal.h">
+    <ClInclude Include="FORMATO_CONTRARTO_I.h">
+      <Filter>Archivos de encabezado</Filter>
+    </ClInclude>
+    <ClInclude Include="FORMATO_CONTRATO_II.h">
       <Filter>Archivos de encabezado</Filter>
     </ClInclude>
   </ItemGroup>

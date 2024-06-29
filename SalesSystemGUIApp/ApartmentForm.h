@@ -189,6 +189,7 @@ namespace SalesSystemGUIApp {
 			this->txtNumDep->Name = L"txtNumDep";
 			this->txtNumDep->Size = System::Drawing::Size(132, 22);
 			this->txtNumDep->TabIndex = 8;
+			this->txtNumDep->TextChanged += gcnew System::EventHandler(this, &ApartmentForm::txtNumDep_TextChanged);
 			// 
 			// txtPrecio
 			// 
@@ -327,6 +328,7 @@ namespace SalesSystemGUIApp {
 			this->txtPiso->Location = System::Drawing::Point(758, 341);
 			this->txtPiso->Margin = System::Windows::Forms::Padding(4);
 			this->txtPiso->Name = L"txtPiso";
+			this->txtPiso->ReadOnly = true;
 			this->txtPiso->Size = System::Drawing::Size(132, 22);
 			this->txtPiso->TabIndex = 25;
 			// 
@@ -380,6 +382,7 @@ namespace SalesSystemGUIApp {
 			// txtHabitado
 			// 
 			this->txtHabitado->AutoSize = true;
+			this->txtHabitado->Enabled = false;
 			this->txtHabitado->Location = System::Drawing::Point(758, 458);
 			this->txtHabitado->Margin = System::Windows::Forms::Padding(4);
 			this->txtHabitado->Name = L"txtHabitado";
@@ -434,6 +437,7 @@ namespace SalesSystemGUIApp {
 	}
 	private: System::Void ApartmentForm_Load(System::Object^ sender, System::EventArgs^ e) {
 		showApartment();
+		this->txtNumDep->TextChanged += gcnew System::EventHandler(this, &ApartmentForm::txtNumDep_TextChanged);
 	}
 	private: System::Void label3_Click(System::Object^ sender, System::EventArgs^ e) {
 	}
@@ -445,7 +449,17 @@ namespace SalesSystemGUIApp {
 			   txtPrecio->Text = "";
 			   txtDimensiones->Text = "";
 			   txtPiso->Text = "";
+			   txtRealizado->Checked = false;
+			   txtHabitado->Checked = false;
 		   }
+
+
+		   /*void VerficarControls() {
+			   if (txtNumDep->Text == "" || txtPrecio->Text == "" || txtDimensiones->Text == "" || txtPiso->Text == "" || pictureBox1==nullptr) {
+				   MessageBox::Show("Faltan ingresar datos", "Advertencia", MessageBoxButtons::OK, MessageBoxIcon::Warning);
+			   }
+		   }*/
+
 
 	private: System::Void nuevoToolStripMenuItem_Click(System::Object^ sender, System::EventArgs^ e) {
 
@@ -454,29 +468,47 @@ namespace SalesSystemGUIApp {
 	private: System::Void btnAdd_Click(System::Object^ sender, System::EventArgs^ e) {
 
 		int id = Convert::ToInt32(txtNumDep->Text);
-		//int numdepartamento = Convert::ToInt32(txtNumDep->Text);
 		double precio = Convert::ToDouble(txtPrecio->Text);
-		int piso = Convert::ToInt32(txtPiso->Text);
+		int piso = ObtenerPiso(txtNumDep->Text);
+		txtPiso->Text = Convert::ToString(piso);
 		double dimensiones = Convert::ToDouble(txtDimensiones->Text);
-	
-		Departamento^ depa = gcnew Departamento();
 
-		depa->Id = id; // ES EL NUMERO DE DEPARTAMENTO
-		depa->Precio = precio;
-		depa->Estado = txtRealizado->Checked;
-		depa->Habitado = txtHabitado->Checked;
-		depa->Dimensiones = dimensiones;
-		depa->Piso = piso;
-		//depa->NumDep = numdepartamento;
-
-		if (pictureBox1 != nullptr && pictureBox1->Image != nullptr) {
-			System::IO::MemoryStream^ ms = gcnew System::IO::MemoryStream();
-			pictureBox1->Image->Save(ms, System::Drawing::Imaging::ImageFormat::Jpeg);
-			depa->Photo = ms->ToArray();
+		// Verificar si el departamento ya existe por su número de id
+		bool departamentoExistente = false;
+		List<Departamento^>^ departList = Service::ConsultaDepa();
+		for (int i = 0; i < departList->Count; i++) {
+			if (departList[i]->Id == id) {
+				departamentoExistente = true;
+				break;
+			}
 		}
 
-		Service::AddApartment(depa);
-		showApartment();
+		if (departamentoExistente) {
+			MessageBox::Show("El departamento con el número " + id + " ya existe.", "Departamento Existente",
+				MessageBoxButtons::OK, MessageBoxIcon::Warning);
+			ClearControls();
+		}
+		else {
+			Departamento^ depa = gcnew Departamento();
+
+			depa->Id = id; // ES EL NUMERO DE DEPARTAMENTO
+			depa->Precio = precio;
+			depa->Estado = txtRealizado->Checked;
+			depa->Habitado = txtHabitado->Checked;
+			depa->Dimensiones = dimensiones;
+			depa->Piso = piso;
+
+			if (pictureBox1 != nullptr && pictureBox1->Image != nullptr) {
+				System::IO::MemoryStream^ ms = gcnew System::IO::MemoryStream();
+				pictureBox1->Image->Save(ms, System::Drawing::Imaging::ImageFormat::Jpeg);
+				depa->Photo = ms->ToArray();
+			}
+
+			//VerficarControls();
+
+			Service::AddApartment(depa);
+			showApartment();
+		}
 	}
 
 		   void showApartment() {
@@ -504,6 +536,14 @@ namespace SalesSystemGUIApp {
 						   estadoDep, habitadoDep
 				   });
 			   }
+		   }
+
+		   int ObtenerPiso (String^ depa) {
+			   if (depa->Length == 3) {
+				   int primerDigito = Convert::ToInt32(depa->Substring(0, 1));
+				   return primerDigito;
+			   }
+
 		   }
 
 
@@ -564,7 +604,8 @@ namespace SalesSystemGUIApp {
 		//int numDepa = Convert::ToInt32(txtNumDep->Text);
 		double dimensiones = Convert::ToDouble(txtDimensiones->Text);
 		double precio = Convert::ToDouble(txtPrecio->Text);
-		int piso = Convert::ToInt32(txtPiso->Text);
+		int piso = ObtenerPiso(txtNumDep->Text);
+		txtPiso->Text = Convert::ToString(piso);
 		//double metros = Convert::ToDouble(textDimen->Text);
 		//int numdepartamento = Convert::ToInt32(txtNumDep->Text);
 
@@ -597,6 +638,71 @@ namespace SalesSystemGUIApp {
 	}
 	private: System::Void label2_Click(System::Object^ sender, System::EventArgs^ e) {
 	}
+private: System::Void txtPiso_TextChanged(System::Object^ sender, System::EventArgs^ e) {
+}
+private: System::Void txtNumDep_TextChanged(System::Object^ sender, System::EventArgs^ e) {
+	/*// Verificar si el número de departamento ya existe
+		int id = 0;
+	if (!Int32::TryParse(txtNumDep->Text, id)) {
+		// Si no se puede parsear a entero, limpiar los campos y salir
+		LimpiarCampos();
+		return;
+	}
+
+	bool departamentoExistente = false;
+	List<Departamento^>^ departList = Service::ConsultaDepa();
+	for (int i = 0; i < departList->Count; i++) {
+		if (departList[i]->Id == id) {
+			departamentoExistente = true;
+			break;
+		}
+	}
+
+	if (departamentoExistente) {
+		MessageBox::Show("El departamento con el número " + id + " ya existe.", "Departamento Existente",
+			MessageBoxButtons::OK, MessageBoxIcon::Warning);
+		// Limpiar campos incluyendo txtNumDep
+		LimpiarCampos();
+		EnableFields(false);
+	}
+	else {
+		int piso = ObtenerPiso(txtNumDep->Text);
+		txtPiso->Text = Convert::ToString(piso);
+		EnableFields(true);
+	}*/
+
+	if (txtNumDep->Text->Length == 3) {
+		int piso = ObtenerPiso(txtNumDep->Text);  // Obtener el primer dígito
+		txtPiso->Text = Convert::ToString(piso);  // Mostrar el piso en txtPiso
+	}
+	else {
+		txtPiso->Text = "";  // Limpiar el texto si no es válido
+	}
+
+
+
+}
+
+		/*private: void LimpiarCampos() {
+			txtNumDep->Text = "";
+			txtPrecio->Text = "";
+			txtDimensiones->Text = "";
+			txtPiso->Text = "";
+			pictureBox1->Image = nullptr; // Limpiar la imagen del pictureBox si es necesario
+		}
+
+		private: void EnableFields(bool enable) {
+			// Habilitar o deshabilitar campos según el parámetro 'enable'
+			txtPiso->Enabled = enable;
+			txtPrecio->Enabled = enable;
+			txtDimensiones->Enabled = enable;
+			txtRealizado->Enabled = enable;
+			pictureBox1->Enabled = enable;
+		}
+
+		*/
+
+
 };
 }
 
