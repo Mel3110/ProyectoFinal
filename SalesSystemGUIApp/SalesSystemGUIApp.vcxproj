@@ -237,6 +237,9 @@
     <EmbeddedResource Include="MOD_Inqui.resx">
       <DependentUpon>MOD_Inqui.h</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="PersonalForm.resx">
+      <DependentUpon>PersonalForm.h</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="SalesSystemGUIApp.resx">
       <DependentUpon>SalesSystemGUIApp.h</DependentUpon>
     </EmbeddedResource>
