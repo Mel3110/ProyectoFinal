@@ -114,6 +114,10 @@ namespace SalesSystemGUIApp {
 	private: System::Windows::Forms::Label^ label11;
 	private: System::Windows::Forms::Button^ button4;
 	private: System::Windows::Forms::Button^ button5;
+	private: System::Windows::Forms::Label^ label3;
+	private: System::Windows::Forms::TextBox^ textInquilino;
+
+
 
 
 
@@ -173,6 +177,8 @@ namespace SalesSystemGUIApp {
 			this->label11 = (gcnew System::Windows::Forms::Label());
 			this->button4 = (gcnew System::Windows::Forms::Button());
 			this->button5 = (gcnew System::Windows::Forms::Button());
+			this->label3 = (gcnew System::Windows::Forms::Label());
+			this->textInquilino = (gcnew System::Windows::Forms::TextBox());
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dgvDeudas))->BeginInit();
 			this->SuspendLayout();
 			// 
@@ -181,7 +187,7 @@ namespace SalesSystemGUIApp {
 			this->label5->AutoSize = true;
 			this->label5->Font = (gcnew System::Drawing::Font(L"Mongolian Baiti", 14.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->label5->Location = System::Drawing::Point(484, 350);
+			this->label5->Location = System::Drawing::Point(486, 374);
 			this->label5->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
 			this->label5->Name = L"label5";
 			this->label5->Size = System::Drawing::Size(124, 25);
@@ -192,7 +198,7 @@ namespace SalesSystemGUIApp {
 			// textDeuda
 			// 
 			this->textDeuda->BackColor = System::Drawing::SystemColors::Control;
-			this->textDeuda->Location = System::Drawing::Point(694, 350);
+			this->textDeuda->Location = System::Drawing::Point(696, 374);
 			this->textDeuda->Margin = System::Windows::Forms::Padding(4);
 			this->textDeuda->Name = L"textDeuda";
 			this->textDeuda->ReadOnly = true;
@@ -204,7 +210,7 @@ namespace SalesSystemGUIApp {
 			this->label6->AutoSize = true;
 			this->label6->Font = (gcnew System::Drawing::Font(L"Mongolian Baiti", 14.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->label6->Location = System::Drawing::Point(484, 107);
+			this->label6->Location = System::Drawing::Point(486, 131);
 			this->label6->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
 			this->label6->Name = L"label6";
 			this->label6->Size = System::Drawing::Size(90, 25);
@@ -216,7 +222,7 @@ namespace SalesSystemGUIApp {
 			this->label7->AutoSize = true;
 			this->label7->Font = (gcnew System::Drawing::Font(L"Mongolian Baiti", 14.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->label7->Location = System::Drawing::Point(486, 153);
+			this->label7->Location = System::Drawing::Point(488, 177);
 			this->label7->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
 			this->label7->Name = L"label7";
 			this->label7->Size = System::Drawing::Size(64, 25);
@@ -228,7 +234,7 @@ namespace SalesSystemGUIApp {
 			this->label8->AutoSize = true;
 			this->label8->Font = (gcnew System::Drawing::Font(L"Mongolian Baiti", 14.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->label8->Location = System::Drawing::Point(486, 196);
+			this->label8->Location = System::Drawing::Point(488, 220);
 			this->label8->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
 			this->label8->Name = L"label8";
 			this->label8->Size = System::Drawing::Size(50, 25);
@@ -240,7 +246,7 @@ namespace SalesSystemGUIApp {
 			this->label9->AutoSize = true;
 			this->label9->Font = (gcnew System::Drawing::Font(L"Mongolian Baiti", 14.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->label9->Location = System::Drawing::Point(484, 240);
+			this->label9->Location = System::Drawing::Point(486, 264);
 			this->label9->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
 			this->label9->Name = L"label9";
 			this->label9->Size = System::Drawing::Size(88, 25);
@@ -252,7 +258,7 @@ namespace SalesSystemGUIApp {
 			this->label10->AutoSize = true;
 			this->label10->Font = (gcnew System::Drawing::Font(L"Mongolian Baiti", 14.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->label10->Location = System::Drawing::Point(484, 286);
+			this->label10->Location = System::Drawing::Point(486, 310);
 			this->label10->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
 			this->label10->Name = L"label10";
 			this->label10->Size = System::Drawing::Size(109, 25);
@@ -261,15 +267,16 @@ namespace SalesSystemGUIApp {
 			// 
 			// textAlquiler
 			// 
-			this->textAlquiler->Location = System::Drawing::Point(694, 107);
+			this->textAlquiler->Location = System::Drawing::Point(696, 131);
 			this->textAlquiler->Margin = System::Windows::Forms::Padding(4);
 			this->textAlquiler->Name = L"textAlquiler";
+			this->textAlquiler->ReadOnly = true;
 			this->textAlquiler->Size = System::Drawing::Size(175, 22);
 			this->textAlquiler->TabIndex = 15;
 			// 
 			// textAgua
 			// 
-			this->textAgua->Location = System::Drawing::Point(694, 153);
+			this->textAgua->Location = System::Drawing::Point(696, 177);
 			this->textAgua->Margin = System::Windows::Forms::Padding(4);
 			this->textAgua->Name = L"textAgua";
 			this->textAgua->Size = System::Drawing::Size(175, 22);
@@ -277,7 +284,7 @@ namespace SalesSystemGUIApp {
 			// 
 			// textLuz
 			// 
-			this->textLuz->Location = System::Drawing::Point(694, 196);
+			this->textLuz->Location = System::Drawing::Point(696, 220);
 			this->textLuz->Margin = System::Windows::Forms::Padding(4);
 			this->textLuz->Name = L"textLuz";
 			this->textLuz->Size = System::Drawing::Size(175, 22);
@@ -285,24 +292,26 @@ namespace SalesSystemGUIApp {
 			// 
 			// textSecurity
 			// 
-			this->textSecurity->Location = System::Drawing::Point(694, 286);
+			this->textSecurity->Location = System::Drawing::Point(696, 310);
 			this->textSecurity->Margin = System::Windows::Forms::Padding(4);
 			this->textSecurity->Name = L"textSecurity";
+			this->textSecurity->ReadOnly = true;
 			this->textSecurity->Size = System::Drawing::Size(175, 22);
 			this->textSecurity->TabIndex = 18;
 			// 
 			// textInternet
 			// 
-			this->textInternet->Location = System::Drawing::Point(694, 240);
+			this->textInternet->Location = System::Drawing::Point(696, 264);
 			this->textInternet->Margin = System::Windows::Forms::Padding(4);
 			this->textInternet->Name = L"textInternet";
+			this->textInternet->ReadOnly = true;
 			this->textInternet->Size = System::Drawing::Size(175, 22);
 			this->textInternet->TabIndex = 19;
 			// 
 			// button1
 			// 
 			this->button1->Font = (gcnew System::Drawing::Font(L"Mongolian Baiti", 12));
-			this->button1->Location = System::Drawing::Point(489, 464);
+			this->button1->Location = System::Drawing::Point(491, 488);
 			this->button1->Margin = System::Windows::Forms::Padding(4);
 			this->button1->Name = L"button1";
 			this->button1->Size = System::Drawing::Size(119, 37);
@@ -314,7 +323,7 @@ namespace SalesSystemGUIApp {
 			// button2
 			// 
 			this->button2->Font = (gcnew System::Drawing::Font(L"Mongolian Baiti", 12));
-			this->button2->Location = System::Drawing::Point(568, 509);
+			this->button2->Location = System::Drawing::Point(570, 533);
 			this->button2->Margin = System::Windows::Forms::Padding(4);
 			this->button2->Name = L"button2";
 			this->button2->Size = System::Drawing::Size(119, 37);
@@ -368,7 +377,7 @@ namespace SalesSystemGUIApp {
 			this->label1->AutoSize = true;
 			this->label1->Font = (gcnew System::Drawing::Font(L"Mongolian Baiti", 14.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->label1->Location = System::Drawing::Point(593, 38);
+			this->label1->Location = System::Drawing::Point(486, 43);
 			this->label1->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
 			this->label1->Name = L"label1";
 			this->label1->Size = System::Drawing::Size(149, 25);
@@ -389,7 +398,7 @@ namespace SalesSystemGUIApp {
 			// 
 			// textFechaVencimiento
 			// 
-			this->textFechaVencimiento->Location = System::Drawing::Point(694, 384);
+			this->textFechaVencimiento->Location = System::Drawing::Point(696, 408);
 			this->textFechaVencimiento->Margin = System::Windows::Forms::Padding(4);
 			this->textFechaVencimiento->Name = L"textFechaVencimiento";
 			this->textFechaVencimiento->Size = System::Drawing::Size(175, 22);
@@ -400,7 +409,7 @@ namespace SalesSystemGUIApp {
 			this->label2->AutoSize = true;
 			this->label2->Font = (gcnew System::Drawing::Font(L"Mongolian Baiti", 14.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->label2->Location = System::Drawing::Point(484, 380);
+			this->label2->Location = System::Drawing::Point(486, 404);
 			this->label2->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
 			this->label2->Name = L"label2";
 			this->label2->Size = System::Drawing::Size(194, 25);
@@ -409,7 +418,7 @@ namespace SalesSystemGUIApp {
 			// 
 			// textId
 			// 
-			this->textId->Location = System::Drawing::Point(598, 66);
+			this->textId->Location = System::Drawing::Point(642, 47);
 			this->textId->Name = L"textId";
 			this->textId->Size = System::Drawing::Size(144, 22);
 			this->textId->TabIndex = 32;
@@ -417,7 +426,7 @@ namespace SalesSystemGUIApp {
 			// textEstado
 			// 
 			this->textEstado->BackColor = System::Drawing::SystemColors::Control;
-			this->textEstado->Location = System::Drawing::Point(694, 414);
+			this->textEstado->Location = System::Drawing::Point(696, 438);
 			this->textEstado->Margin = System::Windows::Forms::Padding(4);
 			this->textEstado->Name = L"textEstado";
 			this->textEstado->ReadOnly = true;
@@ -431,7 +440,7 @@ namespace SalesSystemGUIApp {
 			this->label11->AutoSize = true;
 			this->label11->Font = (gcnew System::Drawing::Font(L"Mongolian Baiti", 14.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->label11->Location = System::Drawing::Point(484, 410);
+			this->label11->Location = System::Drawing::Point(486, 434);
 			this->label11->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
 			this->label11->Name = L"label11";
 			this->label11->Size = System::Drawing::Size(78, 25);
@@ -442,7 +451,7 @@ namespace SalesSystemGUIApp {
 			// button4
 			// 
 			this->button4->Font = (gcnew System::Drawing::Font(L"Mongolian Baiti", 12));
-			this->button4->Location = System::Drawing::Point(657, 464);
+			this->button4->Location = System::Drawing::Point(659, 488);
 			this->button4->Margin = System::Windows::Forms::Padding(4);
 			this->button4->Name = L"button4";
 			this->button4->Size = System::Drawing::Size(119, 37);
@@ -454,7 +463,7 @@ namespace SalesSystemGUIApp {
 			// button5
 			// 
 			this->button5->Font = (gcnew System::Drawing::Font(L"Mongolian Baiti", 12));
-			this->button5->Location = System::Drawing::Point(750, 509);
+			this->button5->Location = System::Drawing::Point(752, 533);
 			this->button5->Margin = System::Windows::Forms::Padding(4);
 			this->button5->Name = L"button5";
 			this->button5->Size = System::Drawing::Size(119, 37);
@@ -463,12 +472,36 @@ namespace SalesSystemGUIApp {
 			this->button5->UseVisualStyleBackColor = true;
 			this->button5->Click += gcnew System::EventHandler(this, &ADMIN_inq_recibos::button5_Click);
 			// 
+			// label3
+			// 
+			this->label3->AutoSize = true;
+			this->label3->Font = (gcnew System::Drawing::Font(L"Mongolian Baiti", 14.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->label3->Location = System::Drawing::Point(488, 76);
+			this->label3->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
+			this->label3->Name = L"label3";
+			this->label3->Size = System::Drawing::Size(98, 25);
+			this->label3->TabIndex = 37;
+			this->label3->Text = L"Inquilino";
+			this->label3->Click += gcnew System::EventHandler(this, &ADMIN_inq_recibos::label3_Click_1);
+			// 
+			// textInquilino
+			// 
+			this->textInquilino->Location = System::Drawing::Point(642, 76);
+			this->textInquilino->Name = L"textInquilino";
+			this->textInquilino->ReadOnly = true;
+			this->textInquilino->Size = System::Drawing::Size(229, 22);
+			this->textInquilino->TabIndex = 38;
+			this->textInquilino->TextChanged += gcnew System::EventHandler(this, &ADMIN_inq_recibos::textBox1_TextChanged_1);
+			// 
 			// ADMIN_inq_recibos
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(8, 16);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 			this->BackColor = System::Drawing::SystemColors::Info;
-			this->ClientSize = System::Drawing::Size(959, 613);
+			this->ClientSize = System::Drawing::Size(959, 604);
+			this->Controls->Add(this->textInquilino);
+			this->Controls->Add(this->label3);
 			this->Controls->Add(this->button5);
 			this->Controls->Add(this->button4);
 			this->Controls->Add(this->textEstado);
@@ -506,6 +539,7 @@ namespace SalesSystemGUIApp {
 
 	private:
 		List<Departamento^>^ departList = Service::ConsultaDepa();
+		List<Inquilino^>^ inquilinoList = Service::ConsultaInquilino();
 
 		static int ConvertirFecha(String^ fecha) {
 			// Extrae día, mes y año de la cadena
@@ -596,12 +630,19 @@ namespace SalesSystemGUIApp {
 	}
 
 	private: System::Void dataGridView1_CellClick(System::Object^ sender, System::Windows::Forms::DataGridViewCellEventArgs^ e) {
-		int deudaId = Int32::Parse(dgvDeudas->Rows[dgvDeudas->SelectedCells[0]->RowIndex]->Cells[0]->Value->ToString());
+		int depa = Int32::Parse(dgvDeudas->Rows[dgvDeudas->SelectedCells[0]->RowIndex]->Cells[0]->Value->ToString());
 
-		Deudas^ deuda = Service::ConsultaDeudaByID(deudaId);
+		Deudas^ deuda = Service::ConsultaDeudaByID(depa);
+		Inquilino^ inquilino = Service::ConsultaInquilinoByNumDep(depa);
 
 		if (deuda != nullptr) {
 			textId->Text = "" + deuda->Id;
+			for (int i = 0; i < inquilinoList->Count; i++) {
+				Inquilino^ inquilino = inquilinoList[i];
+				if (inquilino->DepAsignado == deuda->Id) {
+					textInquilino->Text = inquilino->Nombre + " " + inquilino->Apellido;
+				}
+			}
 			textDeuda->Text = "" + deuda->Deuda;
 			textAlquiler->Text = "" + deuda->Alquiler;
 			textAgua->Text = "" + deuda->Agua;
@@ -626,6 +667,7 @@ namespace SalesSystemGUIApp {
 	private: System::Void button4_Click(System::Object^ sender, System::EventArgs^ e) {
 
 		int id = Convert::ToInt32(textId->Text);
+  
 		double alquiler = Convert::ToDouble(textAlquiler->Text);
 		double agua = Convert::ToDouble(textAgua->Text);
 		double luz = Convert::ToDouble(textLuz->Text);
@@ -660,5 +702,9 @@ namespace SalesSystemGUIApp {
 		showDeudas();
 
 	}
-	};
+	private: System::Void label3_Click_1(System::Object^ sender, System::EventArgs^ e) {
+	}
+private: System::Void textBox1_TextChanged_1(System::Object^ sender, System::EventArgs^ e) {
+}
+};
 }

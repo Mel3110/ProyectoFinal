@@ -127,9 +127,10 @@
     <ClCompile Include="ADMIN_inq_recibos.cpp" />
     <ClCompile Include="ADMIN_interfaz.cpp" />
     <ClCompile Include="ApartmentForm.cpp" />
-    <ClCompile Include="Contrato.cpp" />
     <ClCompile Include="CrudPersonal.cpp" />
     <ClCompile Include="DepSearchForm.cpp" />
+    <ClCompile Include="FORMATO_CONTRARTO_I.cpp" />
+    <ClCompile Include="FORMATO_CONTRATO_II.cpp" />
     <ClCompile Include="GenerateOrderForm.cpp" />
     <ClCompile Include="GraphicsForm.cpp" />
     <ClCompile Include="LoginForm.cpp" />
@@ -160,13 +161,16 @@
       <FileType>CppForm</FileType>
     </ClInclude>
     <ClInclude Include="ComboBoxItem.h" />
-    <ClInclude Include="Contrato.h">
-      <FileType>CppForm</FileType>
-    </ClInclude>
     <ClInclude Include="CrudPersonal.h">
       <FileType>CppForm</FileType>
     </ClInclude>
     <ClInclude Include="DepSearchForm.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
+    <ClInclude Include="FORMATO_CONTRARTO_I.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
+    <ClInclude Include="FORMATO_CONTRATO_II.h">
       <FileType>CppForm</FileType>
     </ClInclude>
     <ClInclude Include="GenerateOrderForm.h">
@@ -216,14 +220,17 @@
     <EmbeddedResource Include="ApartmentForm.resx">
       <DependentUpon>ApartmentForm.h</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Contrato.resx">
-      <DependentUpon>Contrato.h</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="CrudPersonal.resx">
       <DependentUpon>CrudPersonal.h</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="DepSearchForm.resx">
       <DependentUpon>DepSearchForm.h</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FORMATO_CONTRARTO_I.resx">
+      <DependentUpon>FORMATO_CONTRARTO_I.h</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FORMATO_CONTRATO_II.resx">
+      <DependentUpon>FORMATO_CONTRATO_II.h</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GenerateOrderForm.resx">
       <DependentUpon>GenerateOrderForm.h</DependentUpon>

@@ -1,4 +1,5 @@
 #pragma once
+#include "FORMATO_CONTRARTO_I.h"
 
 namespace SalesSystemGUIApp {
 
@@ -106,33 +107,37 @@ namespace SalesSystemGUIApp {
 			// textBox6
 			// 
 			this->textBox6->Enabled = false;
-			this->textBox6->Location = System::Drawing::Point(249, 312);
+			this->textBox6->Location = System::Drawing::Point(332, 384);
+			this->textBox6->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
 			this->textBox6->Name = L"textBox6";
-			this->textBox6->Size = System::Drawing::Size(100, 20);
+			this->textBox6->Size = System::Drawing::Size(132, 22);
 			this->textBox6->TabIndex = 40;
 			// 
 			// textBox4
 			// 
 			this->textBox4->Enabled = false;
-			this->textBox4->Location = System::Drawing::Point(249, 262);
+			this->textBox4->Location = System::Drawing::Point(332, 322);
+			this->textBox4->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
 			this->textBox4->Name = L"textBox4";
-			this->textBox4->Size = System::Drawing::Size(100, 20);
+			this->textBox4->Size = System::Drawing::Size(132, 22);
 			this->textBox4->TabIndex = 38;
 			// 
 			// textBox3
 			// 
 			this->textBox3->Enabled = false;
-			this->textBox3->Location = System::Drawing::Point(249, 218);
+			this->textBox3->Location = System::Drawing::Point(332, 268);
+			this->textBox3->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
 			this->textBox3->Name = L"textBox3";
-			this->textBox3->Size = System::Drawing::Size(100, 20);
+			this->textBox3->Size = System::Drawing::Size(132, 22);
 			this->textBox3->TabIndex = 37;
 			// 
 			// textMetraje
 			// 
 			this->textMetraje->Enabled = false;
-			this->textMetraje->Location = System::Drawing::Point(249, 169);
+			this->textMetraje->Location = System::Drawing::Point(332, 208);
+			this->textMetraje->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
 			this->textMetraje->Name = L"textMetraje";
-			this->textMetraje->Size = System::Drawing::Size(100, 20);
+			this->textMetraje->Size = System::Drawing::Size(132, 22);
 			this->textMetraje->TabIndex = 36;
 			// 
 			// label9
@@ -140,9 +145,10 @@ namespace SalesSystemGUIApp {
 			this->label9->AutoSize = true;
 			this->label9->Font = (gcnew System::Drawing::Font(L"Mongolian Baiti", 14.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->label9->Location = System::Drawing::Point(69, 310);
+			this->label9->Location = System::Drawing::Point(92, 382);
+			this->label9->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
 			this->label9->Name = L"label9";
-			this->label9->Size = System::Drawing::Size(43, 20);
+			this->label9->Size = System::Drawing::Size(54, 25);
 			this->label9->TabIndex = 34;
 			this->label9->Text = L"DNI";
 			// 
@@ -151,9 +157,10 @@ namespace SalesSystemGUIApp {
 			this->label8->AutoSize = true;
 			this->label8->Font = (gcnew System::Drawing::Font(L"Mongolian Baiti", 14.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->label8->Location = System::Drawing::Point(69, 260);
+			this->label8->Location = System::Drawing::Point(92, 320);
+			this->label8->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
 			this->label8->Name = L"label8";
-			this->label8->Size = System::Drawing::Size(78, 20);
+			this->label8->Size = System::Drawing::Size(99, 25);
 			this->label8->TabIndex = 33;
 			this->label8->Text = L"Teléfono";
 			// 
@@ -162,9 +169,10 @@ namespace SalesSystemGUIApp {
 			this->label7->AutoSize = true;
 			this->label7->Font = (gcnew System::Drawing::Font(L"Mongolian Baiti", 14.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->label7->Location = System::Drawing::Point(69, 216);
+			this->label7->Location = System::Drawing::Point(92, 266);
+			this->label7->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
 			this->label7->Name = L"label7";
-			this->label7->Size = System::Drawing::Size(62, 20);
+			this->label7->Size = System::Drawing::Size(79, 25);
 			this->label7->TabIndex = 32;
 			this->label7->Text = L"Correo";
 			// 
@@ -173,18 +181,20 @@ namespace SalesSystemGUIApp {
 			this->label6->AutoSize = true;
 			this->label6->Font = (gcnew System::Drawing::Font(L"Mongolian Baiti", 14.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->label6->Location = System::Drawing::Point(69, 169);
+			this->label6->Location = System::Drawing::Point(92, 208);
+			this->label6->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
 			this->label6->Name = L"label6";
-			this->label6->Size = System::Drawing::Size(66, 20);
+			this->label6->Size = System::Drawing::Size(87, 25);
 			this->label6->TabIndex = 31;
 			this->label6->Text = L"Metraje";
 			// 
 			// textBox1
 			// 
 			this->textBox1->Enabled = false;
-			this->textBox1->Location = System::Drawing::Point(249, 123);
+			this->textBox1->Location = System::Drawing::Point(332, 151);
+			this->textBox1->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
 			this->textBox1->Name = L"textBox1";
-			this->textBox1->Size = System::Drawing::Size(100, 20);
+			this->textBox1->Size = System::Drawing::Size(132, 22);
 			this->textBox1->TabIndex = 30;
 			// 
 			// label5
@@ -192,17 +202,19 @@ namespace SalesSystemGUIApp {
 			this->label5->AutoSize = true;
 			this->label5->Font = (gcnew System::Drawing::Font(L"Mongolian Baiti", 14.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->label5->Location = System::Drawing::Point(69, 121);
+			this->label5->Location = System::Drawing::Point(92, 149);
+			this->label5->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
 			this->label5->Name = L"label5";
-			this->label5->Size = System::Drawing::Size(80, 20);
+			this->label5->Size = System::Drawing::Size(98, 25);
 			this->label5->TabIndex = 29;
 			this->label5->Text = L"Inquilino";
 			// 
 			// pictureBox1
 			// 
-			this->pictureBox1->Location = System::Drawing::Point(37, 367);
+			this->pictureBox1->Location = System::Drawing::Point(49, 452);
+			this->pictureBox1->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
 			this->pictureBox1->Name = L"pictureBox1";
-			this->pictureBox1->Size = System::Drawing::Size(181, 128);
+			this->pictureBox1->Size = System::Drawing::Size(241, 158);
 			this->pictureBox1->TabIndex = 41;
 			this->pictureBox1->TabStop = false;
 			// 
@@ -210,9 +222,10 @@ namespace SalesSystemGUIApp {
 			// 
 			this->button1->Font = (gcnew System::Drawing::Font(L"Mongolian Baiti", 14.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->button1->Location = System::Drawing::Point(249, 369);
+			this->button1->Location = System::Drawing::Point(332, 454);
+			this->button1->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
 			this->button1->Name = L"button1";
-			this->button1->Size = System::Drawing::Size(120, 57);
+			this->button1->Size = System::Drawing::Size(160, 70);
 			this->button1->TabIndex = 42;
 			this->button1->Text = L"Historial de recibos";
 			this->button1->UseVisualStyleBackColor = true;
@@ -221,20 +234,23 @@ namespace SalesSystemGUIApp {
 			// 
 			this->button2->Font = (gcnew System::Drawing::Font(L"Mongolian Baiti", 14.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->button2->Location = System::Drawing::Point(250, 440);
+			this->button2->Location = System::Drawing::Point(333, 542);
+			this->button2->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
 			this->button2->Name = L"button2";
-			this->button2->Size = System::Drawing::Size(120, 57);
+			this->button2->Size = System::Drawing::Size(160, 70);
 			this->button2->TabIndex = 43;
 			this->button2->Text = L"Contrato";
 			this->button2->UseVisualStyleBackColor = true;
+			this->button2->Click += gcnew System::EventHandler(this, &ADMIN_inq_infodep::button2_Click);
 			// 
 			// button3
 			// 
 			this->button3->Font = (gcnew System::Drawing::Font(L"Mongolian Baiti", 14.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->button3->Location = System::Drawing::Point(55, 501);
+			this->button3->Location = System::Drawing::Point(73, 617);
+			this->button3->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
 			this->button3->Name = L"button3";
-			this->button3->Size = System::Drawing::Size(145, 39);
+			this->button3->Size = System::Drawing::Size(193, 48);
 			this->button3->TabIndex = 44;
 			this->button3->Text = L"Cambiar foto";
 			this->button3->UseVisualStyleBackColor = true;
@@ -244,9 +260,10 @@ namespace SalesSystemGUIApp {
 			// 
 			this->textDep->Enabled = false;
 			this->textDep->ForeColor = System::Drawing::SystemColors::Window;
-			this->textDep->Location = System::Drawing::Point(120, 68);
+			this->textDep->Location = System::Drawing::Point(160, 84);
+			this->textDep->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
 			this->textDep->Name = L"textDep";
-			this->textDep->Size = System::Drawing::Size(132, 20);
+			this->textDep->Size = System::Drawing::Size(175, 22);
 			this->textDep->TabIndex = 46;
 			// 
 			// label1
@@ -254,9 +271,10 @@ namespace SalesSystemGUIApp {
 			this->label1->AutoSize = true;
 			this->label1->Font = (gcnew System::Drawing::Font(L"Mongolian Baiti", 14.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->label1->Location = System::Drawing::Point(126, 35);
+			this->label1->Location = System::Drawing::Point(168, 43);
+			this->label1->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
 			this->label1->Name = L"label1";
-			this->label1->Size = System::Drawing::Size(116, 20);
+			this->label1->Size = System::Drawing::Size(149, 25);
 			this->label1->TabIndex = 45;
 			this->label1->Text = L"Departamento";
 			// 
@@ -264,8 +282,9 @@ namespace SalesSystemGUIApp {
 			// 
 			this->button4->BackColor = System::Drawing::SystemColors::ButtonHighlight;
 			this->button4->Location = System::Drawing::Point(0, 0);
+			this->button4->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
 			this->button4->Name = L"button4";
-			this->button4->Size = System::Drawing::Size(75, 23);
+			this->button4->Size = System::Drawing::Size(100, 28);
 			this->button4->TabIndex = 47;
 			this->button4->Text = L"Atrás";
 			this->button4->UseVisualStyleBackColor = false;
@@ -281,36 +300,42 @@ namespace SalesSystemGUIApp {
 					this->NumDepa
 			});
 			this->dgvApartment->GridColor = System::Drawing::SystemColors::ButtonHighlight;
-			this->dgvApartment->Location = System::Drawing::Point(439, 35);
+			this->dgvApartment->Location = System::Drawing::Point(585, 43);
+			this->dgvApartment->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
 			this->dgvApartment->Name = L"dgvApartment";
 			this->dgvApartment->RowHeadersVisible = false;
-			this->dgvApartment->Size = System::Drawing::Size(213, 505);
+			this->dgvApartment->RowHeadersWidth = 51;
+			this->dgvApartment->Size = System::Drawing::Size(284, 622);
 			this->dgvApartment->TabIndex = 48;
 			this->dgvApartment->CellClick += gcnew System::Windows::Forms::DataGridViewCellEventHandler(this, &ADMIN_inq_infodep::dataGridView1_CellClick);
 			// 
 			// Id
 			// 
 			this->Id->HeaderText = L"Id";
+			this->Id->MinimumWidth = 6;
 			this->Id->Name = L"Id";
 			this->Id->Width = 45;
 			// 
 			// Piso
 			// 
 			this->Piso->HeaderText = L"Piso";
+			this->Piso->MinimumWidth = 6;
 			this->Piso->Name = L"Piso";
 			this->Piso->Width = 65;
 			// 
 			// NumDepa
 			// 
 			this->NumDepa->HeaderText = L"N° Departamento";
+			this->NumDepa->MinimumWidth = 6;
 			this->NumDepa->Name = L"NumDepa";
+			this->NumDepa->Width = 125;
 			// 
 			// ADMIN_inq_infodep
 			// 
-			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
+			this->AutoScaleDimensions = System::Drawing::SizeF(8, 16);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 			this->BackColor = System::Drawing::SystemColors::Info;
-			this->ClientSize = System::Drawing::Size(701, 589);
+			this->ClientSize = System::Drawing::Size(935, 725);
 			this->Controls->Add(this->dgvApartment);
 			this->Controls->Add(this->button4);
 			this->Controls->Add(this->textDep);
@@ -329,6 +354,7 @@ namespace SalesSystemGUIApp {
 			this->Controls->Add(this->label6);
 			this->Controls->Add(this->textBox1);
 			this->Controls->Add(this->label5);
+			this->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
 			this->Name = L"ADMIN_inq_infodep";
 			this->Text = L"Información de Departamento";
 			this->Load += gcnew System::EventHandler(this, &ADMIN_inq_infodep::ADMIN_inq_infodep_Load);
@@ -384,5 +410,19 @@ namespace SalesSystemGUIApp {
 	private: System::Void ADMIN_inq_infodep_Load(System::Object^ sender, System::EventArgs^ e) {
 		showApartment();
 	}
-	};
+
+
+		   // Función para mostrar nuevamente ADMIN_interfaz cuando ApartmentForm se cierra
+		   void ADMIN_inq_infodep::FormatoContratoI(System::Object^ sender, FormClosedEventArgs^ e)
+		   {
+			   this->Show();
+		   }
+
+	private: System::Void button2_Click(System::Object^ sender, System::EventArgs^ e) {
+		FORMATO_CONTRARTO_I^ fORMATO_CONTRARTO_I = gcnew FORMATO_CONTRARTO_I();
+		fORMATO_CONTRARTO_I->FormClosed += gcnew FormClosedEventHandler(this, &ADMIN_inq_infodep::FormatoContratoI);
+		fORMATO_CONTRARTO_I->Show();
+		this->Hide();
+	}
+};
 }
